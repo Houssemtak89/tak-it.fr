@@ -5,98 +5,121 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Houssem TAKTAK · Tech Lead and software architect, Java / Angular</title>
 <meta name="description" content="Freelance Tech Lead and software architect, Java / Spring Boot and Angular, near Paris. Microservices, Kafka, generative AI in Java applications, AI agents for development teams.">
+<meta name="theme-color" content="#0b0d14">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@300;400&display=swap" rel="stylesheet">
 <style>
-  :root { --ink:#1d2433; --muted:#5b6475; --line:#e3e6ec; --bg:#fbfbfd; --accent:#1f5fa8; --accent-bg:#e8f0fa; --human:#0f6e56; --human-bg:#e1f5ee; }
+  :root {
+    --bg:#0b0d14; --ink:#d9d6cc; --muted:#8a8c96; --faint:#4a4d58;
+    --gold:#c9b37e; --line:rgba(201,179,126,.18);
+  }
   * { box-sizing:border-box; }
-  body { margin:0; font:17px/1.65 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; color:var(--ink); background:var(--bg); }
-  main { max-width:860px; margin:0 auto; padding:56px 24px 72px; }
-  h1 { font-size:34px; line-height:1.2; margin:0 0 8px; font-weight:650; }
-  h2 { font-size:21px; margin:56px 0 16px; font-weight:600; }
-  h3 { font-size:17px; margin:0 0 4px; font-weight:600; }
-  p { margin:0 0 12px; }
-  a { color:var(--accent); }
-  .lead { font-size:19px; color:var(--muted); margin-bottom:20px; }
-  .links a { margin-right:18px; font-weight:500; }
-  .cards { display:grid; grid-template-columns:repeat(auto-fit, minmax(230px, 1fr)); gap:14px; }
-  .card { background:#fff; border:1px solid var(--line); border-radius:12px; padding:18px 18px 14px; }
-  .card p { color:var(--muted); font-size:15.5px; }
-  ol.flow { list-style:none; padding:0; margin:0; display:grid; gap:8px; counter-reset:step; }
-  ol.flow li { counter-increment:step; display:flex; gap:14px; align-items:baseline; background:#fff; border:1px solid var(--line); border-radius:10px; padding:10px 14px; }
-  ol.flow li::before { content:counter(step); font-weight:650; color:var(--accent); min-width:18px; }
-  ol.flow li.human { background:var(--human-bg); border-color:#9fe1cb; }
-  ol.flow li.human::before { color:var(--human); }
-  ol.flow span { color:var(--muted); font-size:15px; }
-  .legend { font-size:14px; color:var(--muted); margin-top:10px; }
-  .legend b { color:var(--human); font-weight:600; }
-  .job { display:grid; grid-template-columns:150px 1fr; gap:16px; padding:14px 0; border-top:1px solid var(--line); }
-  .job .when { color:var(--muted); font-size:15px; }
-  .job p { color:var(--muted); font-size:15.5px; margin:0; }
-  .stack { color:var(--muted); font-size:15.5px; }
-  footer { margin-top:56px; padding-top:20px; border-top:1px solid var(--line); color:var(--muted); font-size:14px; }
-  @media (max-width:560px) { .job { grid-template-columns:1fr; gap:2px; } h1 { font-size:28px; } }
+  html { background:var(--bg); }
+  body {
+    margin:0; color:var(--ink);
+    font:300 16px/1.75 Inter, system-ui, -apple-system, "Segoe UI", sans-serif;
+    background:radial-gradient(ellipse at 50% -10%, #161a28 0%, var(--bg) 60%) fixed;
+    -webkit-font-smoothing:antialiased;
+  }
+  main { max-width:680px; margin:0 auto; padding:140px 28px 96px; }
+  .serif, h1, h2, h3 { font-family:"Cormorant Garamond", Georgia, serif; font-weight:400; }
+  h1 { font-size:clamp(44px, 8vw, 68px); line-height:1.05; margin:0; letter-spacing:.01em; }
+  .role { font-family:"Cormorant Garamond", Georgia, serif; font-style:italic; font-size:22px; color:var(--gold); margin:14px 0 36px; }
+  .lead { color:var(--muted); max-width:34em; }
+  .links { margin-top:28px; font-size:14px; letter-spacing:.06em; }
+  .links a { margin-right:26px; }
+  a { color:var(--ink); text-decoration:none; border-bottom:1px solid var(--line); transition:color .3s, border-color .3s; }
+  a:hover, a:focus-visible { color:var(--gold); border-color:var(--gold); }
+  .mark { display:block; width:36px; height:1px; background:var(--gold); opacity:.6; margin:96px 0 22px; }
+  h2 { font-size:15px; font-family:Inter, system-ui, sans-serif; font-weight:400; letter-spacing:.32em; text-transform:uppercase; color:var(--gold); margin:0 0 30px; }
+  h3 { font-size:25px; line-height:1.25; margin:0 0 6px; }
+  p { margin:0 0 14px; }
+  .item { margin-bottom:34px; }
+  .item p { color:var(--muted); margin:0; }
+  .when { font-size:13px; letter-spacing:.14em; color:var(--faint); text-transform:uppercase; margin-bottom:4px; }
+  .stack { color:var(--muted); font-size:15px; }
+  footer { margin-top:110px; font-size:13px; letter-spacing:.08em; color:var(--faint); }
+  .fade { opacity:0; transform:translateY(8px); animation:rise 1.4s ease forwards; }
+  .d1 { animation-delay:.15s } .d2 { animation-delay:.45s } .d3 { animation-delay:.75s } .d4 { animation-delay:1.05s }
+  @keyframes rise { to { opacity:1; transform:none; } }
+  @media (prefers-reduced-motion: reduce) { .fade { animation:none; opacity:1; transform:none; } }
+  @media (max-width:560px) { main { padding:80px 22px 72px; } .mark { margin-top:72px; } .role { font-size:20px; } h3 { font-size:23px; } .links a { display:inline-block; margin-bottom:10px; } }
 </style>
 </head>
 <body>
 <main>
 
-  <h1>Houssem TAKTAK</h1>
-  <p class="lead">Freelance Tech Lead and software architect, Java / Spring Boot and Angular. Twelve years of business applications, mostly on the back-end. Based near Paris, on site, hybrid or remote.</p>
-  <p class="links">
-    <a href="https://www.linkedin.com/in/houssem-taktak-07601888/">LinkedIn</a>
-    <a href="https://github.com/Houssemtak89">GitHub</a>
-    <a href="mailto:houssem.taktak@gmail.com">houssem.taktak@gmail.com</a>
-  </p>
+  <header>
+    <h1 class="fade">Houssem TAKTAK</h1>
+    <p class="role fade d1">Tech Lead and software architect, Java / Angular</p>
+    <p class="lead fade d2">Twelve years of business applications, mostly on the back-end. Freelance through TAK IT, based near Paris, on site, hybrid or remote.</p>
+    <p class="links fade d3">
+      <a href="https://www.linkedin.com/in/houssem-taktak-07601888/">LinkedIn</a>
+      <a href="https://github.com/Houssemtak89">GitHub</a>
+      <a href="mailto:houssem.taktak@gmail.com">houssem.taktak@gmail.com</a>
+    </p>
+  </header>
 
-  <h2>What I do</h2>
-  <div class="cards">
-    <div class="card">
+  <section class="fade d4">
+    <span class="mark"></span>
+    <h2>What I do</h2>
+    <div class="item">
       <h3>Architecture and lead</h3>
-      <p>Java microservices with hexagonal architecture and DDD, event-driven exchanges with Kafka, Angular front-ends. I work out the design with the business side and the architects, then build it with the team and review the code.</p>
+      <p>Java microservices, hexagonal architecture and DDD, Kafka, Angular. I shape the design with the business side, then build it with the team.</p>
     </div>
-    <div class="card">
+    <div class="item">
       <h3>Generative AI in Java</h3>
-      <p>An LLM gateway over several providers, with a profile per application and cost tracking, and a RAG in production on PostgreSQL with pgvector. Spring Boot, Spring AI, LangChain4j.</p>
+      <p>An LLM gateway over several providers and a RAG in production on PostgreSQL and pgvector. Spring AI, LangChain4j.</p>
     </div>
-    <div class="card">
+    <div class="item">
       <h3>AI agents for dev teams</h3>
-      <p>Agents that know the team's conventions and help from the ticket to the merge request, built on Claude Code, hooks and MCP servers. My current team uses them every day.</p>
+      <p>Agents that know the team's conventions, from the ticket to the merge request. Claude Code, hooks, MCP servers.</p>
     </div>
-  </div>
+  </section>
 
-  <h2>How I take a ticket to production with AI agents</h2>
-  <p>I wrote this workflow down as an open source Claude Code plugin, <a href="https://github.com/Houssemtak89/spring-agentic-workflow">spring-agentic-workflow</a>. Agents do the reading, the planning, the coding and the first reviews. The developer makes every decision that matters.</p>
-  <ol class="flow">
-    <li>Understand the requirement <span>against the existing code and constraints</span></li>
-    <li class="human">Functional questions <span>the developer answers and approves</span></li>
-    <li class="human">Technical plan <span>from the ADRs, one decision at a time with the developer</span></li>
-    <li>Orchestration <span>the agents the ticket needs, in proportion to its size</span></li>
-    <li class="human">Go <span>the developer starts the implementation</span></li>
-    <li>Implementation <span>agents work in parallel, each on its own files</span></li>
-    <li>Quality gates <span>tests, JaCoCo coverage, Sonar, architecture rules</span></li>
-    <li>AI reviews <span>every business rule proved by a test, past review comments checked</span></li>
-    <li class="human">Human review <span>the developer decides to merge</span></li>
-  </ol>
-  <p class="legend"><b>Green steps</b> wait for the developer. The plugin blocks code changes until the plan is approved.</p>
+  <section>
+    <span class="mark"></span>
+    <h2>Work in the open</h2>
+    <div class="item">
+      <h3><a href="https://github.com/Houssemtak89/spring-agentic-workflow">spring-agentic-workflow</a></h3>
+      <p>The Claude Code plugin I use to take a Spring ticket to production with AI agents.</p>
+    </div>
+    <div class="item">
+      <h3><a href="https://github.com/Houssemtak89/spring-petclinic/pull/1">A worked example</a></h3>
+      <p>One ticket on Spring PetClinic, carried through the plugin from requirement to pull request.</p>
+    </div>
+    <div class="item">
+      <h3><a href="https://java-code-reviewer.onrender.com">Java Code Reviewer</a></h3>
+      <p>Paste Java code, get a review.</p>
+    </div>
+  </section>
 
-  <h2>Experience</h2>
-  <div class="job">
-    <div class="when">2024 to now</div>
-    <div><h3>Tech Lead, Java / Angular · freelance for a large company</h3>
-      <p>Rebuild of a nationwide business system as event-driven microservices, then a new application on the same platform. Shared security starter (OAuth2, OIDC), saga with compensation, AI agents for the team.</p></div>
-  </div>
-  <div class="job">
-    <div class="when">2022 to 2024</div>
-    <div><h3>Founder and lead developer · TAK IT</h3>
-      <p>R&amp;D in generative AI: an LLM gateway and a RAG in production behind mobile apps published on the App Store and Google Play. Spring Boot, WebFlux, Angular, Ionic, Google Cloud.</p></div>
-  </div>
-  <div class="job">
-    <div class="when">2014 to 2022</div>
-    <div><h3>Lead developer and developer, Java / Angular</h3>
-      <p>Telecoms (Axione), media (Arte), insurance (SMABTP), capital markets (ADS): business applications, batch processing, team building and architecture.</p></div>
-  </div>
+  <section>
+    <span class="mark"></span>
+    <h2>Experience</h2>
+    <div class="item">
+      <div class="when">2024 to now</div>
+      <h3>Tech Lead, Java / Angular</h3>
+      <p>Freelance through TAK IT for a large company. A nationwide business system rebuilt as event-driven microservices, then a new application on the same platform.</p>
+    </div>
+    <div class="item">
+      <div class="when">2022 to 2024</div>
+      <h3>Founder and lead developer, TAK IT</h3>
+      <p>An LLM gateway and a RAG in production behind mobile apps on the App Store and Google Play.</p>
+    </div>
+    <div class="item">
+      <div class="when">2014 to 2022</div>
+      <h3>Lead developer and developer, Java / Angular</h3>
+      <p>Telecoms, media, insurance and capital markets: business applications, batch processing, architecture.</p>
+    </div>
+  </section>
 
-  <h2>Stack</h2>
-  <p class="stack">Java 8 to 25 · Spring Boot · Spring Security · Spring Batch · WebFlux · Kafka · PostgreSQL · Angular · NgRx · Ionic · Docker · Kubernetes · Argo CD · GitLab CI · Google Cloud · Claude Code · MCP · Spring AI · LangChain4j · JUnit · Testcontainers · Playwright</p>
+  <section>
+    <span class="mark"></span>
+    <h2>Stack</h2>
+    <p class="stack">Java 8 to 25 · Spring Boot · Spring Security · WebFlux · Kafka · PostgreSQL · Angular · Docker · Kubernetes · Google Cloud · Spring AI · LangChain4j · Claude Code · MCP</p>
+  </section>
 
   <footer>TAK IT · Software engineering and consulting · Clamart, France</footer>
 </main>
