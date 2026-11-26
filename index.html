@@ -24,6 +24,7 @@
   }
   main { max-width:680px; margin:0 auto; padding:140px 28px 96px; }
   .serif, h1, h2, h3 { font-family:"Cormorant Garamond", Georgia, serif; font-weight:400; }
+  .portrait { display:block; width:120px; height:120px; border-radius:50%; object-fit:cover; margin:0 0 34px; padding:3px; border:1px solid rgba(201,179,126,.45); filter:grayscale(.3) brightness(.9) contrast(1.05); }
   h1 { font-size:clamp(44px, 8vw, 68px); line-height:1.05; margin:0; letter-spacing:.01em; }
   .role { font-family:"Cormorant Garamond", Georgia, serif; font-style:italic; font-size:22px; color:var(--gold); margin:14px 0 36px; }
   .lead { color:var(--muted); max-width:34em; }
@@ -44,13 +45,14 @@
   .d1 { animation-delay:.15s } .d2 { animation-delay:.45s } .d3 { animation-delay:.75s } .d4 { animation-delay:1.05s }
   @keyframes rise { to { opacity:1; transform:none; } }
   @media (prefers-reduced-motion: reduce) { .fade { animation:none; opacity:1; transform:none; } }
-  @media (max-width:560px) { main { padding:80px 22px 72px; } .mark { margin-top:72px; } .role { font-size:20px; } h3 { font-size:23px; } .links a { display:inline-block; margin-bottom:10px; } }
+  @media (max-width:560px) { .portrait { width:96px; height:96px; margin-bottom:26px; } main { padding:80px 22px 72px; } .mark { margin-top:72px; } .role { font-size:20px; } h3 { font-size:23px; } .links a { display:inline-block; margin-bottom:10px; } }
 </style>
 </head>
 <body>
 <main>
 
   <header>
+    <img class="portrait fade" src="photo.jpg" alt="Houssem TAKTAK" width="120" height="120">
     <h1 class="fade">Houssem TAKTAK</h1>
     <p class="role fade d1">Tech Lead and software architect, Java / Angular</p>
     <p class="lead fade d2">Twelve years of business applications, mostly on the back-end. Freelance through TAK IT, based near Paris, on site, hybrid or remote.</p>
